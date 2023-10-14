@@ -179,12 +179,12 @@ export const Spotify = ({ className }) => (
 //   </svg>
 // );
 
-// export const PauseIcon = ({ className }) => (
-//   <svg aria-hidden="true" viewBox="0 0 10 10" className={className}>
-//     <path
-//       d="M1.496 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H2.68a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H1.496Zm5.82 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H8.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H7.316Z"
-//       fill-rule="evenodd"
-//       clip-rule="evenodd"
-//     ></path>
-//   </svg>
-// );
+export const PauseIcon = ({ className }) => (
+  <svg aria-hidden="true" viewBox="0 0 10 10" className={className}>
+    <path
+      d="M1.496 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H2.68a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H1.496Zm5.82 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H8.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H7.316Z"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    ></path>
+  </svg>
+);
