@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { PlayIcon, PauseIcon } from "@/assets/Icon/svg";
+import { useRouter } from "next/navigation";
 
 function Article({ id, title, date, description, audio }) {
   const [play, setPlay] = useState(true);
+  const router = useRouter();
 
   return (
     <>
-      <article aria-labelledby="episode-5-title" className="py-10 sm:py-12">
+      <article aria-label="episode-5-title" className="py-10 sm:py-12">
         <div className="lg:px-8">
           <div className="lg:max-w-4xl">
             <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
@@ -17,12 +19,12 @@ function Article({ id, title, date, description, audio }) {
                   id="episode-5-title"
                   className="mt-2 text-lg font-bold text-slate-900"
                 >
-                  <a href="/5">
+                  <button onClick={() => router.push("/" + id)}>
                     {id}: {title}
-                  </a>
+                  </button>
                 </h2>
                 <time
-                  datetime="2022-02-24T00:00:00.000Z"
+                  dateTime="2022-02-24T00:00:00.000Z"
                   className="order-first font-mono text-sm leading-7 text-slate-500"
                 >
                   {date}
