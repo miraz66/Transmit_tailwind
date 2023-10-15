@@ -126,14 +126,6 @@ export default function page({ params }) {
                                   </ul>
                                 </div>
                               </div>
-
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
-
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
                             </div>
                           </div>
                         </article>
