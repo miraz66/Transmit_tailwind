@@ -128,6 +128,8 @@ export default function page({ params }) {
                               </div>
 
                               <div>dsfsdfsd</div>
+                              <div>dsfsdfsd</div>
+                              <div>dsfsdfsd</div>
                             </div>
                           </div>
                         </article>
