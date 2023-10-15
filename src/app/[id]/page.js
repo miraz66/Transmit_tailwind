@@ -135,11 +135,6 @@ export default function page({ params }) {
                               <div>dsfsdfsd</div>
                               <div>dsfsdfsd</div>
                               <div>dsfsdfsd</div>
-
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
-                              <div>dsfsdfsd</div>
                               <div>dsfsdfsd</div>
                               <div>dsfsdfsd</div>
                               <div>dsfsdfsd</div>
