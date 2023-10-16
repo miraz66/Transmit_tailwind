@@ -20,6 +20,8 @@ export default function Page() {
         <p>{count}</p>
         <p>{count}</p>
         <p>{count}</p>
+        <p>{count}</p>
+        <p>{count}</p>
 
         <button onClick={() => countIncrement()}>Increment</button>
       </div>
