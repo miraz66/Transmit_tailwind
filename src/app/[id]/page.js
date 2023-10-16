@@ -1,5 +1,5 @@
 import Center_body from "@/components/Center_body";
-import { HeaderSvg } from "@/assets/Icon/svg";
+import { HeaderSvg, PlayIcon } from "@/assets/Icon/svg";
 import { Data } from "@/assets/EpisodData/Data";
 
 export default function page({ params }) {
@@ -32,13 +32,7 @@ export default function page({ params }) {
                                       aria-label="Play episode 5: Bill Lumbergh"
                                       className="group relative flex p-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-700 hover:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-700 focus:ring-offset-4"
                                     >
-                                      <svg
-                                        viewBox="0 0 36 36"
-                                        aria-hidden="true"
-                                        className="h-9 w-9 fill-white group-active:fill-white/80"
-                                      >
-                                        <path d="M33.75 16.701C34.75 17.2783 34.75 18.7217 33.75 19.299L11.25 32.2894C10.25 32.8668 9 32.1451 9 30.9904L9 5.00962C9 3.85491 10.25 3.13323 11.25 3.71058L33.75 16.701Z"></path>
-                                      </svg>
+                                      <PlayIcon className="h-9 w-9 fill-white group-active:fill-white/80" />
                                     </button>
 
                                     <div className="flex flex-col">
@@ -59,7 +53,7 @@ export default function page({ params }) {
                                 </header>
                                 <hr className="my-12 border-gray-200" />
 
-                                <div class="prose prose-slate mt-14 [&>h2:nth-of-type(3n)]:before:bg-violet-200 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-light [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>ul]:font-light [&>ul]:text-stone-950">
+                                <div className="prose prose-slate mt-14 [&>h2:nth-of-type(3n)]:before:bg-violet-200 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-light [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>ul]:font-light [&>ul]:text-stone-950">
                                   <h2 id="topics">Topics</h2>
                                   <ul>
                                     <li>

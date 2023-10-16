@@ -1,9 +1,13 @@
+"use client";
+
 import { Data } from "@/assets/EpisodData/Data";
 import { HeaderSvg } from "@/assets/Icon/svg";
-import React from "react";
+import React, { useState } from "react";
 import Article from "../Article";
 
 function Main_Body() {
+  const [play, setPlay] = useState(true);
+
   return (
     <>
       <main className="border-t border-slate-200 lg:relative lg:mb-28 lg:border-t-0">
@@ -20,10 +24,15 @@ function Main_Body() {
                 </div>
               </div>
             </div>
-            <div className="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
+            <div className="divide-y relative divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
               {Data
                 ? Data.reverse().map((data) => (
-                    <Article {...data} key={data.id} />
+                    <Article
+                      {...data}
+                      key={data.id}
+                      play={play}
+                      setPlay={setPlay}
+                    />
                   ))
                 : null}
             </div>

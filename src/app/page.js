@@ -1,3 +1,4 @@
+import AudioPlayer from "@/components/AudioPlayer";
 import Center_body from "@/components/Center_body";
 import Main_Body from "@/components/Main_Body";
 
@@ -9,8 +10,9 @@ export default function Home() {
           <Center_body />
         </div>
 
-        <div className="h-screen overflow-y-auto w-full">
+        <div className="h-screen overflow-y-auto w-full relative">
           <Main_Body />
+
         </div>
       </div>
     </main>
