@@ -75,8 +75,8 @@ function Center_body() {
               <p
                 className={
                   show
-                    ? "mt-2 text-base leading-7 text-slate-700"
-                    : "mt-2 text-base leading-7 text-slate-700 lg:line-clamp-4"
+                    ? "mt-2 text-base font-light leading-7 text-slate-950"
+                    : "mt-2 text-base font-light leading-7 text-slate-950 lg:line-clamp-4"
                 }
               >
                 In this show, Eric and Wes dig deep to get to the facts with

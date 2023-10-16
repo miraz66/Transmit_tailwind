@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="flex justify-between">
-        <div className="bg-slate-50 w-[43rem] min-h-screen overflow-y-auto">
+        <div className="bg-slate-50 w-[42rem] min-h-screen overflow-y-auto">
           <Center_body />
         </div>
 
