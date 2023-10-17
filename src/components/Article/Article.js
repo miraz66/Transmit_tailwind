@@ -1,11 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import { PlayIcon, PauseIcon } from "@/assets/Icon/svg";
 import { useRouter } from "next/navigation";
 
-function Article({ id, title, date, description, audioElam }) {
-  const [play, setPlay] = useState(true);
+function Article({
+  id,
+  title,
+  date,
+  description,
+  audio,
+  isPlaying,
+  setIsPlaying,
+  audioElam,
+  onPlaying,
+}) {
   const router = useRouter();
 
   return (
@@ -35,15 +43,13 @@ function Article({ id, title, date, description, audioElam }) {
                 <div className="mt-4 flex items-center gap-4">
                   <button
                     onClick={() => {
-                      setPlay(!play);
-                      console.log(id);
-                      audioElam(id);
+                      setIsPlaying(!isPlaying);
                     }}
                     type="button"
                     aria-label="Play episode 5: Bill Lumbergh"
                     className="flex items-center gap-x-3 text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
                   >
-                    {play ? (
+                    {!isPlaying ? (
                       <PlayIcon className="h-2.5 w-2.5 fill-current" />
                     ) : (
                       <PauseIcon className="h-2.5 w-2.5 fill-current" />
@@ -69,6 +75,8 @@ function Article({ id, title, date, description, audioElam }) {
             </div>
           </div>
         </div>
+
+        <audio src={audio} ref={audioElam} onTimeUpdate={onPlaying} />
       </article>
     </>
   );

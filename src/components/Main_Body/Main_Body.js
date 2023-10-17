@@ -1,19 +1,36 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import { Data } from "@/assets/EpisodData/Data";
 import { HeaderSvg } from "@/assets/Icon/svg";
 import Article from "../Article";
 import AudioPlayer from "../AudioPlayer";
-import { useRef } from "react";
 
 function Main_Body() {
+  const [currentSong, setCurrentSong] = useState(Data[2]);
+  const [isPlaying, setIsPlaying] = useState();
   const audioElam = useRef();
 
   // console.log(audioElam);
 
-  function cleckd(e) {
-    console.log(e);
-  }
+  useEffect(() => {
+    if (isPlaying) {
+      audioElam.current.play();
+    } else {
+      audioElam.current.pause();
+    }
+  }, [isPlaying]);
+
+  const onPlaying = (e) => {
+    const duration = audioElam.current.duration;
+    const currentTime = audioElam.current.currentTime;
+
+    setCurrentSong({
+      ...currentSong,
+      progress: (currentTime / duration) * 100,
+      length: duration,
+    });
+  };
 
   return (
     <>
@@ -36,14 +53,24 @@ function Main_Body() {
                 ? Data.slice()
                     .reverse()
                     .map((data) => (
-                      <Article {...data} key={data.id} audioElam={cleckd} />
+                      <div key={data.id}>
+                        <Article
+                          {...data}
+                          isPlaying={isPlaying}
+                          setIsPlaying={setIsPlaying}
+                          audioElam={audioElam}
+                          onPlaying={onPlaying}
+                        />
+                        {/* <audio src={data.audio} ref={audioElam} /> */}
+                      </div>
                     ))
                 : null}
-              <audio
-                src="https://their-side-feed.vercel.app/episode-005.mp3"
-                ref={audioElam}
+              <AudioPlayer
+                audioElam={audioElam}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+                currentSong={currentSong}
               />
-              <AudioPlayer audioElam={audioElam} />
             </div>
           </div>
         </div>
