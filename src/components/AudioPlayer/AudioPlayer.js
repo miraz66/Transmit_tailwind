@@ -147,11 +147,11 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
                 >
                   <div
                     className="h-2 md:rounded-l-xl md:rounded-r-md bg-slate-700"
-                    style={{ width: " 0px" }}
+                    style={{ width: `${currentSong.progress}%` }}
                   ></div>
                   <div
                     className="absolute top-1/2 -translate-x-1/2"
-                    style={{ left: "0%" }}
+                    style={{ left: `${currentSong.progress}%` }}
                   >
                     <div
                       className="h-4 rounded-full w-1 bg-slate-700"
@@ -159,7 +159,7 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
                         position: "absolute",
                         transform: "translate(-50%, -50%)",
                         touchAction: "none",
-                        left: "0%",
+                        left: "50%",
                       }}
                     >
                       <div
@@ -207,7 +207,7 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
                     /
                   </span>
                   <span className="hidden rounded-md px-1 py-0.5 font-mono text-sm leading-6 text-slate-500 md:block">
-                    01:04
+                    {currentSong.length}
                   </span>
                 </div>
               </div>
