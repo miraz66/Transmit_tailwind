@@ -2,11 +2,18 @@
 
 import { Data } from "@/assets/EpisodData/Data";
 import { HeaderSvg } from "@/assets/Icon/svg";
-import React, { useState } from "react";
 import Article from "../Article";
+import AudioPlayer from "../AudioPlayer";
+import { useRef } from "react";
 
 function Main_Body() {
-  const [play, setPlay] = useState(true);
+  const audioElam = useRef();
+
+  // console.log(audioElam);
+
+  function cleckd(e) {
+    console.log(e);
+  }
 
   return (
     <>
@@ -26,15 +33,17 @@ function Main_Body() {
             </div>
             <div className="divide-y relative divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
               {Data
-                ? Data.reverse().map((data) => (
-                    <Article
-                      {...data}
-                      key={data.id}
-                      play={play}
-                      setPlay={setPlay}
-                    />
-                  ))
+                ? Data.slice()
+                    .reverse()
+                    .map((data) => (
+                      <Article {...data} key={data.id} audioElam={cleckd} />
+                    ))
                 : null}
+              <audio
+                src="https://their-side-feed.vercel.app/episode-005.mp3"
+                ref={audioElam}
+              />
+              <AudioPlayer audioElam={audioElam} />
             </div>
           </div>
         </div>

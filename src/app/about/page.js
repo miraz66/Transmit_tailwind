@@ -10,35 +10,13 @@ export default function Page() {
     setCount(count + 1);
     countRef.current++;
 
-    console.log("count: " + count);
-    console.log("countRef: " + countRef.current);
+    // console.log("count: " + count);
+    // console.log("countRef: " + countRef.current);
   };
 
   return (
     <div>
       <div className="h-screen flex flex-col justify-center items-center">
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
-        <p>{count}</p>
         <p>{count}</p>
 
         <button onClick={() => countIncrement()}>Increment</button>

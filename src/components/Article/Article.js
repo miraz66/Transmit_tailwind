@@ -4,10 +4,8 @@ import { useState } from "react";
 import { PlayIcon, PauseIcon } from "@/assets/Icon/svg";
 import { useRouter } from "next/navigation";
 
-const playId = [1, 2, 3, 4, 5];
-
-function Article({ id, title, date, description, play, setPlay }) {
-  // const [play, setPlay] = useState(true);
+function Article({ id, title, date, description, audioElam }) {
+  const [play, setPlay] = useState(true);
   const router = useRouter();
 
   return (
@@ -37,7 +35,9 @@ function Article({ id, title, date, description, play, setPlay }) {
                 <div className="mt-4 flex items-center gap-4">
                   <button
                     onClick={() => {
-                      playId.map((e) => (e === id ? setPlay(!play) : null));
+                      setPlay(!play);
+                      console.log(id);
+                      audioElam(id);
                     }}
                     type="button"
                     aria-label="Play episode 5: Bill Lumbergh"
