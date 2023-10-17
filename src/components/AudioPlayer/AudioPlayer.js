@@ -273,6 +273,8 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
           </div>
         </div>
       </div>
+
+      <div>audio</div>
     </>
   );
 }
