@@ -7,7 +7,7 @@ import Article from "../Article";
 import AudioPlayer from "../AudioPlayer";
 
 function Main_Body() {
-  const [currentSong, setCurrentSong] = useState(Data[2]);
+  const [currentSong, setCurrentSong] = useState(Data[4]);
   const [isPlaying, setIsPlaying] = useState();
   const audioElam = useRef();
 
@@ -31,6 +31,10 @@ function Main_Body() {
       length: duration,
     });
   };
+
+  // const selectSong = (song) => {
+  //   Data.map((data) => (song === data.id ? setCurrentSong(data) : null));
+  // };
 
   return (
     <>
@@ -60,11 +64,13 @@ function Main_Body() {
                           setIsPlaying={setIsPlaying}
                           audioElam={audioElam}
                           onPlaying={onPlaying}
+                          // selectSong={selectSong}
+                          currentSong={currentSong}
                         />
-                        {/* <audio src={data.audio} ref={audioElam} /> */}
                       </div>
                     ))
                 : null}
+              <audio src={currentSong.audio} ref={audioElam} />
               <AudioPlayer
                 audioElam={audioElam}
                 isPlaying={isPlaying}

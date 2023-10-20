@@ -2,19 +2,20 @@
 
 import { PlayIcon, PauseIcon } from "@/assets/Icon/svg";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function Article({
   id,
   title,
   date,
   description,
-  audio,
   isPlaying,
   setIsPlaying,
-  audioElam,
-  onPlaying,
+  selectSong,
+  currentSong,
 }) {
   const router = useRouter();
+  const [localId, setLocalId] = useState();
 
   return (
     <>
@@ -44,15 +45,17 @@ function Article({
                   <button
                     onClick={() => {
                       setIsPlaying(!isPlaying);
+                      selectSong(id);
+                      setLocalId(id);
                     }}
                     type="button"
                     aria-label="Play episode 5: Bill Lumbergh"
                     className="flex items-center gap-x-3 text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
                   >
-                    {!isPlaying ? (
-                      <PlayIcon className="h-2.5 w-2.5 fill-current" />
-                    ) : (
+                    {currentSong.id === localId && isPlaying ? (
                       <PauseIcon className="h-2.5 w-2.5 fill-current" />
+                    ) : (
+                      <PlayIcon className="h-2.5 w-2.5 fill-current" />
                     )}
 
                     <span aria-hidden="true">Listen</span>
@@ -75,8 +78,6 @@ function Article({
             </div>
           </div>
         </div>
-
-        <audio src={audio} ref={audioElam} onTimeUpdate={onPlaying} />
       </article>
     </>
   );

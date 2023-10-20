@@ -1,8 +1,21 @@
-import { PauseIcon, PlayIcon } from "@/assets/Icon/svg";
+"use client";
 
-function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
+import { PauseIcon, PlayIcon } from "@/assets/Icon/svg";
+import { useRef } from "react";
+
+function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
+  const clickRef = useRef();
+
   const playPause = () => {
     setIsPlaying(!isPlaying);
+  };
+
+  const checkkWidth = (e) => {
+    let width = clickRef.current.clientWidth;
+    const offset = e.nativeEvent.offsetX;
+
+    const divProgress = (offset / width) * 100;
+    audioElam.current.currentTime = (divProgress / 100) * currentSong.length;
   };
 
   return (
@@ -142,12 +155,16 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
                   Current time
                 </label>
                 <div
-                  className="relative w-full bg-slate-100 md:rounded-full"
+                  className="relative w-full bg-slate-100 md:rounded-full cursor-pointer"
                   style={{ position: "relative", touchAction: "none" }}
+                  ref={clickRef}
+                  onClick={checkkWidth}
                 >
                   <div
-                    className="h-2 md:rounded-l-xl md:rounded-r-md bg-slate-700"
-                    style={{ width: `${currentSong.progress}%` }}
+                    className="h-2 w-0 md:rounded-l-xl md:rounded-r-md bg-slate-700"
+                    style={{
+                      width: `${currentSong.progress}%`,
+                    }}
                   ></div>
                   <div
                     className="absolute top-1/2 -translate-x-1/2"
@@ -273,54 +290,6 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong }) {
           </div>
         </div>
       </div>
-
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
-      <div>audio</div>
     </>
   );
 }
