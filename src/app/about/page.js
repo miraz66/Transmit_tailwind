@@ -19,6 +19,8 @@ export default function Page() {
       <div className="h-screen flex flex-col justify-center items-center">
         <p>{count}</p>
 
+        <div className="">hello I am a Bad boy.</div>
+
         <button onClick={() => countIncrement()}>Increment</button>
       </div>
     </div>

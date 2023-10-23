@@ -12,7 +12,6 @@ export default function Home() {
 
         <div className="h-screen overflow-y-auto w-full relative">
           <Main_Body />
-
         </div>
       </div>
     </main>

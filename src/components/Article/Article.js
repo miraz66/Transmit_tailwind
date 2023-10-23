@@ -13,6 +13,7 @@ function Article({
   setIsPlaying,
   selectSong,
   currentSong,
+  audioElam,
 }) {
   const router = useRouter();
   const [localId, setLocalId] = useState();

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import CenterImage from "@/assets/poster.png";
 import { ApplePodCast, OverCast, Spotify } from "@/assets/Icon/svg";
+import clsx from "clsx";
 
 function Center_body() {
   const [show, setShow] = useState(false);
@@ -73,11 +74,10 @@ function Center_body() {
                 <span className="ml-2.5">About</span>
               </h2>
               <p
-                className={
-                  show
-                    ? "mt-2 text-base font-light leading-7 text-slate-950"
-                    : "mt-2 text-base font-light leading-7 text-slate-950 lg:line-clamp-4"
-                }
+                className={clsx(
+                  "mt-2 text-base font-light leading-7 text-slate-950",
+                  !show && "lg:line-clamp-4"
+                )}
               >
                 In this show, Eric and Wes dig deep to get to the facts with
                 guests who have been labeled villains by a society quick to
@@ -85,17 +85,15 @@ function Center_body() {
                 Thursday to get to the truth with another misunderstood outcast
                 as they share the missing context in their tragic tale.
               </p>
-              <button
-                onClick={() => setShow(true)}
-                type="button"
-                className={
-                  show
-                    ? "mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
-                    : "mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
-                }
-              >
-                Show more
-              </button>
+              {!show && (
+                <button
+                  onClick={() => setShow(true)}
+                  type="button"
+                  className="mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
+                >
+                  Show more
+                </button>
+              )}
             </section>
             <section className="mt-10 lg:mt-12">
               <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">

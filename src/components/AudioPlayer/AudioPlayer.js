@@ -16,6 +16,7 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
 
     const divProgress = (offset / width) * 100;
     audioElam.current.currentTime = (divProgress / 100) * currentSong.length;
+    console.log(divProgress);
   };
 
   return (
@@ -57,9 +58,9 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="h-6 w-6 fill-slate-500 stroke-slate-500 group-hover:fill-slate-700 group-hover:stroke-slate-700"
                   >
                     <path d="M12 6L8 10H6C5.44772 10 5 10.4477 5 11V13C5 13.5523 5.44772 14 6 14H8L12 18V6Z"></path>
@@ -86,9 +87,9 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                     aria-hidden="true"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="h-6 w-6 stroke-slate-500 group-hover:stroke-slate-700"
                   >
                     <path d="M8 5L5 8M5 8L8 11M5 8H13.5C16.5376 8 19 10.4624 19 13.5C19 15.4826 18.148 17.2202 17 18.188"></path>
@@ -126,21 +127,21 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                   >
                     <path
                       d="M16 5L19 8M19 8L16 11M19 8H10.5C7.46243 8 5 10.4624 5 13.5C5 15.4826 5.85204 17.2202 7 18.188"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                     <path
                       d="M13 15V19"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                     <path
                       d="M16 18V16C16 15.4477 16.4477 15 17 15H18C18.5523 15 19 15.4477 19 16V18C19 18.5523 18.5523 19 18 19H17C16.4477 19 16 18.5523 16 18Z"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                 </button>
@@ -194,7 +195,7 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                         }}
                       >
                         <input
-                          tabindex="0"
+                          tabIndex="0"
                           id="react-aria4609042221-:r1:-0"
                           aria-labelledby="react-aria4609042221-:r1:"
                           min="0"
@@ -211,7 +212,7 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                 </div>
                 <div className="hidden items-center gap-2 md:flex">
                   <output
-                    for="react-aria4609042221-:r1:-0"
+                    htmlFor="react-aria4609042221-:r1:-0"
                     aria-live="off"
                     className="hidden rounded-md px-1 py-0.5 font-mono text-sm leading-6 md:block text-slate-500"
                   >
@@ -241,16 +242,16 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                       viewBox="0 0 16 16"
                       fill="none"
                       stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="h-4 w-4"
                     >
                       <path
                         d="M13 1H3C1.89543 1 1 1.89543 1 3V13C1 14.1046 1.89543 15 3 15H13C14.1046 15 15 14.1046 15 13V3C15 1.89543 14.1046 1 13 1Z"
                         fill="currentColor"
                         stroke="currentColor"
-                        stroke-width="2"
+                        strokeWidth="2"
                       ></path>
                       <path d="M3.75 7.25L5.25 5.77539V11.25"></path>
                       <path d="M8.75 7.75L11.25 10.25"></path>
@@ -268,9 +269,9 @@ function AudioPlayer({ isPlaying, setIsPlaying, currentSong, audioElam }) {
                     <svg
                       aria-hidden="true"
                       viewBox="0 0 24 24"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="h-6 w-6 fill-slate-500 stroke-slate-500 group-hover:fill-slate-700 group-hover:stroke-slate-700"
                     >
                       <path d="M12 6L8 10H6C5.44772 10 5 10.4477 5 11V13C5 13.5523 5.44772 14 6 14H8L12 18V6Z"></path>

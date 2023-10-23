@@ -7,11 +7,9 @@ import Article from "../Article";
 import AudioPlayer from "../AudioPlayer";
 
 function Main_Body() {
-  const [currentSong, setCurrentSong] = useState(Data[4]);
+  const [currentSong, setCurrentSong] = useState(Data[1]);
   const [isPlaying, setIsPlaying] = useState();
   const audioElam = useRef();
-
-  // console.log(audioElam);
 
   useEffect(() => {
     if (isPlaying) {
@@ -32,9 +30,9 @@ function Main_Body() {
     });
   };
 
-  // const selectSong = (song) => {
-  //   Data.map((data) => (song === data.id ? setCurrentSong(data) : null));
-  // };
+  const selectSong = (song) => {
+    Data.map((data) => (song === data.id ? setCurrentSong(data) : null));
+  };
 
   return (
     <>
@@ -64,13 +62,17 @@ function Main_Body() {
                           setIsPlaying={setIsPlaying}
                           audioElam={audioElam}
                           onPlaying={onPlaying}
-                          // selectSong={selectSong}
+                          selectSong={selectSong}
                           currentSong={currentSong}
                         />
                       </div>
                     ))
                 : null}
-              <audio src={currentSong.audio} ref={audioElam} />
+              <audio
+                src={currentSong.audio}
+                ref={audioElam}
+                onTimeUpdate={onPlaying}
+              />
               <AudioPlayer
                 audioElam={audioElam}
                 isPlaying={isPlaying}
