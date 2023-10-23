@@ -40,6 +40,8 @@ export default function Page() {
         <div className="">hello I am a Bad boy.</div>
         <div className="">hello I am a Bad boy.</div>
         <div className="">hello I am a Bad boy.</div>
+        <div className="">hello I am a Bad boy.</div>
+        <div className="">hello I am a Bad boy.</div>
 
         <button onClick={() => countIncrement()}>Increment</button>
       </div>
